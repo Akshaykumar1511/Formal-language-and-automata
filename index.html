@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Turing machine Online</title>
+  <meta http-equiv="Content-Type" content="text/ html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="It's turing machine simulator online which runs your program according to your rules in the instruction table.">
+  <meta name="robots" content="all">
+  <meta name="keywords" content="turing, machine, simulator, online, computer, science">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+  <header>
+    <h1>The Turing Machine - By: AKSHAY KUMAR A S(819), SUMANTH R(864), MONISH M(847)-AD2 CINTEL</h1>
+  </header>
+  <hr>
+  <div class="app">
+    <form action="" onsubmit="return false;">
+        <h2>The instruction table <i class="far fa-question-circle" id="tmhelp"></i>  
+        <p id="how-to-use">
+          &ensp; This is the turing machine simulator which runs program according to rules in the instruction table.  <br> &ensp; You can manage the table by clicking on its cells, except of state cells. Use buttons "Add symbol" to add a new symbol to alphabet, "Remove symbol" to remove the last symbol from alphabet, "Add state" to add a new state, "Remove state" to remove the last state. <br> &ensp; "Run" button runs your algorithm with your input, "Clear" button clears the tape (use it when you change the instruction table) and "Step" button do a step forward in your program. <br> Use
+        </p>
+        </h2>
+
+        <div id="tableblock">
+        <table id="table_rules">
+          <tr id="alphabet">
+            <td id="corner"></td>
+            <td class="spectd"><input type="text" value="_"></td>
+            <td class="spectd"><input type="text" value="1"></td>
+          </tr>
+          <tr>
+            <td class="state">q1</td>
+            <td><input type="text" class="rule" value="-"></td>
+            <td><input type="text" class="rule" value="_Rq2"></td>
+          </tr>
+          <tr>
+            <td class="state">q2</td>
+            <td><input type="text" class="rule" value="_Rq5"></td>
+            <td><input type="text" class="rule" value="1Rq3"></td>
+          </tr>
+          <tr>
+            <td class="state">q3</td>
+            <td><input type="text" class="rule" value="1Lq4"></td>
+            <td><input type="text" class="rule" value="1Rq3"></td>
+          </tr>
+          <tr>
+            <td class="state">q4</td>
+            <td><input type="text" class="rule" value="1Nq0"></td>
+            <td><input type="text" class="rule" value="1Lq4"></td>
+          </tr>
+          <tr>
+            <td class="state">q5</td>
+            <td><input type="text" class="rule" value="_Nq5"></td>
+            <td><input type="text" class="rule" value="_Rq5"></td>
+          </tr>
+          <tr>
+            <td class="state">q6</td>
+            <td><input type="text" class="rule" value="1Nq0"></td>
+            <td><input type="text" class="rule" value="-"></td>
+          </tr>
+
+          
+        </table>
+        </div>
+        <button class="tablebutton" id="asym">Add symbol</button>
+        <button class="tablebutton" id="rsym">Remove symbol</button>
+        <button class="tablebutton" id="astate">Add State</button>
+        <button class="tablebutton" id="rstate">Remove State</button>
+      
+      
+      <div id="input_tapeblock">
+        <h2>The input</h2>
+        <input type="text" name="tapeinput" id="tapeinput" value="1111_111"><label for="tapeinput" accesskey="t"></label>
+      </div>
+    </form>
+
+    <div class="tapeblock">
+      <h2>The tape:</h2>
+      <p id="temptape"></p>
+    </div>
+
+    <button id="run">Run</button>
+    <button id="clear">Clear</button>
+    <button id="step">Step</button>
+    
+  </div>
+    <script src="js/turingmachine.js"></script>
+  </body>
+
+  </html>
+
+
